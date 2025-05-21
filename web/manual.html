@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>excel table</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="./assets/logo_w__.png" />
+  </head>
+  <body>
+    <div class="main_view">
+      <header class="header">
+        <div class="header_container">
+          <div class="header_button-wrap">
+            <button class="header_button" id="index">エクセル表変換</button>
+            <button class="header_button" id="register">新規設定</button>
+            <button class="header_button" id="edit">設定編集</button>
+            <button class="header_button" id="trim">エクセル整形</button>
+          </div>
+          <div class="header_logo-wrap">
+            <div class="header_logo-box">
+              <img
+                src="./assets/logo_w__.png"
+                alt=""
+                class=""
+                width="40"
+                height="28"
+                style="object-fit: cover"
+              />
+              <h1 class="header_title">Excel Table</h1>
+            </div>
+          </div>
+          <nav class="header_nav" aria-label="header_nav">
+            <button id="reload" aria-label="reload">
+              <img
+                src="./assets/reload.png"
+                alt=""
+                class=""
+                width="16"
+                height="16"
+                style="object-fit: cover"
+              />
+            </button>
+            <button id="back" aria-label="home">
+              <img
+                src="./assets/home.png"
+                alt=""
+                class=""
+                width="16"
+                height="16"
+                style="object-fit: cover"
+              />
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="main_body">
+        <nav class="main_nav" aria-label="main_nav">
+          <div class="main_wrap">
+            <h2 class="main_title">マニュアル</h2>
+            <h3 class="index_title">TOPICS</h3>
+            <ul id="section_list" aria-busy="true"></ul>
+          </div>
+        </nav>
+
+        <section class="main_content">
+          <div class="main_wrap"></div>
+        </section>
+      </main>
+    </div>
+    <script type="text/javascript" src="/eel.js" defer></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
+  </body>
+</html>

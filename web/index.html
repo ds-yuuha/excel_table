@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>excel table</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="./assets/logo_w__.png" />
+  </head>
+  <body>
+    <div class="main_view">
+      <header class="header">
+        <div class="header_container">
+          <div class="header_button-wrap">
+            <button class="header_button" id="register">新規設定</button>
+            <button class="header_button" id="edit">設定編集</button>
+            <button class="header_button" id="trim">エクセル整形</button>
+          </div>
+          <div class="header_logo-wrap">
+            <div class="header_logo-box">
+              <img
+                src="./assets/logo_w__.png"
+                alt=""
+                class=""
+                width="40"
+                height="28"
+                style="object-fit: cover"
+              />
+              <h1 class="header_title">Excel Table</h1>
+            </div>
+          </div>
+          <nav class="header_nav" aria-label="header_nav">
+            <button class="header_button" id="manual">
+              マニュアル/取扱説明
+            </button>
+            <button id="reload" aria-label="reload">
+              <img
+                src="./assets/reload.png"
+                alt=""
+                class=""
+                width="16"
+                height="16"
+                style="object-fit: cover"
+              />
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="main_body">
+        <nav class="main_nav" aria-label="main_nav">
+          <div class="main_wrap">
+            <h2 class="main_title">エクセル-表変換</h2>
+            <h3 class="index_title">条件一覧</h3>
+            <ul id="index_list" aria-busy="true"></ul>
+          </div>
+        </nav>
+
+        <section class="main_content">
+          <div class="main_wrap">
+            <div class="item_wrap">
+              <div class="item_box">
+                <h3 class="item_title">抽出項目</h3>
+                <ul id="item_list" aria-busy="true"></ul>
+              </div>
+            </div>
+          </div>
+          <button
+            id="btn__item-select"
+            onclick="getPathToFile()"
+            aria-label="upload"
+          >
+            <img
+              src="./assets/upload.png"
+              alt=""
+              class=""
+              width="26"
+              height="26"
+              style="object-fit: cover"
+            />
+          </button>
+        </section>
+      </main>
+    </div>
+    <script type="text/javascript" src="/eel.js" defer></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
+    <script type="text/javascript">
+      function getPathToFile() {
+        eel.openWindow()((r) => {
+          console.log(r);
+        });
+      }
+    </script>
+  </body>
+</html>

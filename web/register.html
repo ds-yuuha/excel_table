@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>excel table</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="./assets/logo_w__.png" />
+  </head>
+  <body>
+    <div class="main_view">
+      <header class="header">
+        <div class="header_container">
+          <div class="header_button-wrap">
+            <button class="header_button" id="index">エクセル表変換</button>
+            <button class="header_button" id="edit">設定編集</button>
+            <button class="header_button" id="trim">エクセル整形</button>
+          </div>
+          <div class="header_logo-wrap">
+            <div class="header_logo-box">
+              <img
+                src="./assets/logo_w__.png"
+                alt=""
+                class=""
+                width="40"
+                height="28"
+                style="object-fit: cover"
+              />
+              <h1 class="header_title">Excel Table</h1>
+            </div>
+          </div>
+          <nav class="header_nav" aria-label="header_nav">
+            <button class="header_button" id="manual">
+              マニュアル/取扱説明
+            </button>
+            <button id="reload" aria-label="reload">
+              <img
+                src="./assets/reload.png"
+                alt=""
+                class=""
+                width="16"
+                height="16"
+                style="object-fit: cover"
+              />
+            </button>
+            <button id="back" aria-label="home">
+              <img
+                src="./assets/home.png"
+                alt=""
+                class=""
+                width="16"
+                height="16"
+                style="object-fit: cover"
+              />
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="main_body">
+        <nav class="main_nav" aria-label="main_nav">
+          <div class="main_wrap">
+            <h2 class="main_title">新規設定</h2>
+            <h3 class="index_title">条件一覧</h3>
+            <ul id="index_list" aria-busy="true"></ul>
+          </div>
+        </nav>
+
+        <section class="main_content">
+          <div class="main_wrap">
+            <form>
+              <div class="form_head-wrap">
+                <label for="name" class="name_label"
+                  ><span class="label_tag">Name</span>
+                  <input name="name" id="name" />
+                </label>
+                <label for="type" class="type_label"
+                  ><span class="label_tag">Table_type</span>
+                  <select name="type" id="type">
+                    <option value="0">通常表タイプ</option>
+                    <option value="1">複数表タイプ</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form_wrap">
+                <div class="form_box">
+                  <p>項目</p>
+                  <label for="item_head1"
+                    ><span class="label_tag">No.1</span>
+                    <textarea name="item_head1" id="item_head1"></textarea>
+                  </label>
+                  <label for="item_head2"
+                    ><span class="label_tag">No.2</span>
+                    <textarea name="item_head2" id="item_head2"></textarea>
+                  </label>
+                  <label for="item_head3"
+                    ><span class="label_tag">No.3</span>
+                    <textarea name="item_head3" id="item_head3"></textarea>
+                  </label>
+                  <label for="item_head4"
+                    ><span class="label_tag">No.4</span>
+                    <textarea name="item_head4" id="item_head4"></textarea>
+                  </label>
+                  <label for="item_head5"
+                    ><span class="label_tag">No.5</span>
+                    <textarea name="item_head5" id="item_head5"></textarea>
+                  </label>
+                  <label for="item_head6"
+                    ><span class="label_tag">No.6</span>
+                    <textarea name="item_head6" id="item_head6"></textarea>
+                  </label>
+                  <label for="item_head7"
+                    ><span class="label_tag">No.7</span>
+                    <textarea name="item_head7" id="item_head7"></textarea>
+                  </label>
+                  <label for="item_head8"
+                    ><span class="label_tag">No.8</span>
+                    <textarea name="item_head8" id="item_head8"></textarea>
+                  </label>
+                  <label for="item_head9"
+                    ><span class="label_tag">No.9</span>
+                    <textarea name="item_head9" id="item_head9"></textarea>
+                  </label>
+                  <label for="item_head10"
+                    ><span class="label_tag">No.10</span>
+                    <textarea name="item_head10" id="item_head10"></textarea>
+                  </label>
+                  <label for="item_head11"
+                    ><span class="label_tag">No.11</span>
+                    <textarea name="item_head11" id="item_head11"></textarea>
+                  </label>
+                  <label for="item_head12"
+                    ><span class="label_tag">No.12</span>
+                    <textarea name="item_head12" id="item_head12"></textarea>
+                  </label>
+                  <label for="item_head13"
+                    ><span class="label_tag">No.13</span>
+                    <textarea name="item_head13" id="item_head13"></textarea>
+                  </label>
+                  <label for="item_head14"
+                    ><span class="label_tag">No.14</span>
+                    <textarea name="item_head14" id="item_head14"></textarea>
+                  </label>
+                  <label for="item_head15"
+                    ><span class="label_tag">No.15</span>
+                    <textarea name="item_head15" id="item_head15"></textarea>
+                  </label>
+                </div>
+                <div class="type_form_box">
+                  <p>抽出項目設定</p>
+                  <label for="setting1"
+                    ><span class="label_tag">No.1</span>
+                    <select name="setting1" id="setting1">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting2"
+                    ><span class="label_tag">No.2</span>
+                    <select name="setting2" id="setting2">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting3"
+                    ><span class="label_tag">No.3</span>
+                    <select name="setting3" id="setting3">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting4"
+                    ><span class="label_tag">No.4</span>
+                    <select name="setting4" id="setting4">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting5"
+                    ><span class="label_tag">No.5</span>
+                    <select name="setting5" id="setting5">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting6"
+                    ><span class="label_tag">No.6</span>
+                    <select name="setting6" id="setting6">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting7"
+                    ><span class="label_tag">No.7</span>
+                    <select name="setting7" id="setting7">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting8"
+                    ><span class="label_tag">No.8</span>
+                    <select name="setting8" id="setting8">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting9"
+                    ><span class="label_tag">No.9</span>
+                    <select name="setting9" id="setting9">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting10"
+                    ><span class="label_tag">No.10</span>
+                    <select name="setting10" id="setting10">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting11"
+                    ><span class="label_tag">No.11</span>
+                    <select name="setting11" id="setting11">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting12"
+                    ><span class="label_tag">No.12</span>
+                    <select name="setting12" id="setting12">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting13"
+                    ><span class="label_tag">No.13</span>
+                    <select name="setting13" id="setting13">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting14"
+                    ><span class="label_tag">No.14</span>
+                    <select name="setting14" id="setting14">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                  <label for="setting15"
+                    ><span class="label_tag">No.15</span>
+                    <select name="setting15" id="setting15">
+                      <option value="0">通常値</option>
+                      <option value="1">四捨五入</option>
+                      <option value="2">小数点切り捨て</option>
+                      <option value="3">小数点切り上げ</option>
+                      <option value="4">時間(60進数)</option>
+                      <option value="5">時間(10進数)</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <button id="submit_button" onClick="registerSetting(event)">
+                決定する
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="text/javascript" src="/eel.js" defer></script>
+    <script type="text/javascript" src="js/sub.js" defer></script>
+    <script type="text/javascript">
+      function registerSetting(e) {
+        e.preventDefault();
+        input = [];
+        const name = document.getElementById("name").value;
+        const item1 = document.getElementById("item_head1").value;
+        const item2 = document.getElementById("item_head2").value;
+        const item3 = document.getElementById("item_head3").value;
+        const item4 = document.getElementById("item_head4").value;
+        const item5 = document.getElementById("item_head5").value;
+        const item6 = document.getElementById("item_head6").value;
+        const item7 = document.getElementById("item_head7").value;
+        const item8 = document.getElementById("item_head8").value;
+        const item9 = document.getElementById("item_head9").value;
+        const item10 = document.getElementById("item_head10").value;
+        const item11 = document.getElementById("item_head11").value;
+        const item12 = document.getElementById("item_head12").value;
+        const item13 = document.getElementById("item_head13").value;
+        const item14 = document.getElementById("item_head14").value;
+        const item15 = document.getElementById("item_head15").value;
+        input.push(
+          name,
+          item1,
+          item2,
+          item3,
+          item4,
+          item5,
+          item6,
+          item7,
+          item8,
+          item9,
+          item10,
+          item11,
+          item12,
+          item13,
+          item14,
+          item15
+        );
+
+        setting_input = [];
+        const type = document.getElementById("type").value;
+        const setting1 = document.getElementById("setting1").value;
+        const setting2 = document.getElementById("setting2").value;
+        const setting3 = document.getElementById("setting3").value;
+        const setting4 = document.getElementById("setting4").value;
+        const setting5 = document.getElementById("setting5").value;
+        const setting6 = document.getElementById("setting6").value;
+        const setting7 = document.getElementById("setting7").value;
+        const setting8 = document.getElementById("setting8").value;
+        const setting9 = document.getElementById("setting9").value;
+        const setting10 = document.getElementById("setting10").value;
+        const setting11 = document.getElementById("setting11").value;
+        const setting12 = document.getElementById("setting12").value;
+        const setting13 = document.getElementById("setting13").value;
+        const setting14 = document.getElementById("setting14").value;
+        const setting15 = document.getElementById("setting15").value;
+        setting_input.push(
+          type,
+          setting1,
+          setting2,
+          setting3,
+          setting4,
+          setting5,
+          setting6,
+          setting7,
+          setting8,
+          setting9,
+          setting10,
+          setting11,
+          setting12,
+          setting13,
+          setting14,
+          setting15
+        );
+
+        console.log(input, setting_input);
+        if (name) {
+          eel.addItemHeads(
+            input,
+            setting_input
+          )((r) => {
+            alert("設定が完了しました");
+          });
+          link("index.html");
+        }
+      }
+    </script>
+  </body>
+</html>
